@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>URL Link</h1>
+<ul>
+  <li><a th:href="@{/example}">기본 URL</a></li>
+  <li><a th:href="@{/example(test1=${test1}, test2=${test2})}">Query Parameter</a></li>
+  <li><a th:href="@{/example/{test1}/{test2}(test1=${test1}, test2=${test2})}">Path Variable</a></li>
+  <li><a th:href="@{/example/{test1}(test1=${test1}, test2=${test2})}">Path Variable + Query Parameter</a></li>
+</ul>
+</body>
+</html>
