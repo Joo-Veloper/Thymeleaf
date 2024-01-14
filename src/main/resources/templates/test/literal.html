@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Literal</h1>
+<ul>
+
+    <!-- 아래 주석 풀지마세요 에러가 발생합니다! -->
+    <!-- <li>"This Is Sparta!" = <span th:text="This Is Sparta!"></span></li> -->
+
+    <li>'This' + ' Is' + ' Sparta!' = <span th:text="'This' + ' Is' + ' Sparta!'"></span></li>
+    <li>'This is Sparta' = <span th:text="'This Is Sparta!'"></span></li>
+    <li>'This Is' + ${key} = <span th:text="'This Is ' + ${key}"></span></li>
+    <li>|This Is ${key}| = <span th:text="|This Is ${key}|"></span></li>
+</ul>
+</body>
