@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Basic</title>
+</head>
+<body>
+<h1>utext</h1>
+<ul>
+  <li>text 기능, escape : text <span th:text="${key}"></span></li>
+  <li>text 기능, Unescape : utext <span th:utext="${key}"></span></li>
+</ul>
+
+<h1><span th:inline="none">[[변수Key값]] OR [(변수Key값)]</span></h1>
+<ul>
+  <li><span th:inline="none">[[변수Key값]] </span>[[${key}]]</li>
+  <li><span th:inline="none">[(변수Key값)] </span>[(${key})]</li>
+</ul>
+</body>
+</html>
