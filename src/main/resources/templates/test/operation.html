@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul>
+  <li>사칙연산
+    <ul>
+      <li>1 + 1 = <span th:text="1 + 1"></span></li>
+      <li>1 - 1 = <span th:text="1 - 1"></span></li>
+      <li>4 % 2 = <span th:text="4 % 2"></span></li>
+      <li>2 * 2 = <span th:text="2 * 2"></span></li>
+    </ul>
+  </li>
+  <li>비교
+    <ul>
+      <li>1 > 2 = <span th:text="1 &gt; 2"></span></li>
+      <li>1 gt 2 = <span th:text="1 gt 2"></span></li>
+      <li>1 >= 2 = <span th:text="1 >= 2"></span></li>
+      <li>1 ge 2 = <span th:text="1 ge 2"></span></li>
+      <li>1 == 2 = <span th:text="1 == 2"></span></li>
+      <li>1 != 2 = <span th:text="1 != 2"></span></li>
+    </ul>
+  </li>
+  <li>조건식
+    <ul>
+      <li>(4 % 2 == 0)? '짝':'홀' = <span th:text="(4 % 2 == 0)? '짝':'홀'"></span></li>
+    </ul>
+  </li>
+  <li>Elvis
+    <ul>
+      <li>${key}?: 'null 입니다.' = <span th:text="${key}?: 'null 입니다.'"></span></li>
+      <li>${null}?: 'null 입니다.' = <span th:text="${null}?: 'null 입니다.'"></span></li>
+    </ul>
+  </li>
+  <li>No-Operation
+    <ul>
+      <li>${key}?: _ = <span th:text="${key}?: _">null 입니다.</span></li>
+      <li>${null}?: _ = <span th:text="${null}?: _">null 입니다.</span></li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>
