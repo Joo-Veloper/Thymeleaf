@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var name = [[${user.name}]];
+    var age = [[${user.age}]];
+    var name2 = /*[[${user.name}]]*/ "test name";
+    var user = [[${user}]];
+</script>
+<script th:inline="javascript">
+    var name = [[${user.name}]];
+    var age = [[${user.age}]];
+    // Natural Template
+    var name2 = /*[[${user.name}]]*/ "test name";
+    // Object
+    var user = [[${user}]];
+</script>
+</body>
+</html>
