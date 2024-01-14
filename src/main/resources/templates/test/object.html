@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic</title>
+</head>
+<body>
+<h1>기본 제공 객체</h1>
+<ul>
+    <li>locale = <span th:text="${#locale}"></span></li>
+</ul>
+
+<h1>편의 객체</h1>
+<ul>
+    <li>Request Param = <span th:text="${param.key}"></span></li>
+    <li>Spring Bean = <span th:text="${@testSpringBean.test('Bean 객체 테스트')}"></span></li>
+</ul>
+</body>
+</html>
