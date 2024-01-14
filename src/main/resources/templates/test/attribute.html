@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Set Attribute</h1>
+name=test + th:name<input type="text" name="test" th:name="member"/>
+
+<h1>Add Attribute</h1>
+class=sparta + th:classappend="test" <span class="sparta" th:classappend="test"></span><br/>
+class=sparta + th:attrappend="class='test'" <span class="sparta" th:attrappend="class='test'"></span><br/>
+class=sparta + th:attrprepend="class='test'" <span class="sparta" th:attrprepend="class='test'"></span><br/>
+
+<h1>checked</h1>
+- checked true 설정 <input type="checkbox" name="sparta" th:checked="true"/><br/>
+- checked false 설정 <input type="checkbox" name="sparta" th:checked="false"/><br/>
+</body>
+</html>
