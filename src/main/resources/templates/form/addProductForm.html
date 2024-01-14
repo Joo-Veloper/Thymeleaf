@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../../static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+<!-- Section START! -->
+<div class="container">
+
+    <div class="py-5 text-center">
+        <h2>상품 등록</h2>
+    </div>
+
+    <form action="product.html" th:action th:object="${product}" method="post">
+        <div>
+            <label for="name">상품명</label>
+            <input type="text" th:field="*{name}" class="form-control form-control-sm" placeholder="상품명 입력">
+        </div>
+        <div>
+            <label for="price">가격</label>
+            <input type="text" th:field="*{price}" class="form-control form-control-sm" placeholder="가격 입력">
+        </div>
+        <div>
+            <label for="quantity">수량</label>
+            <input type="text" th:field="*{quantity}" class="form-control form-control-sm" placeholder="수량 입력">
+        </div>
+
+        <hr class="my-4">
+
+        <div>중고 여부</div>
+        <div>
+            <div class="form-check">
+                <input type="checkbox" th:field="${product.isUsed}" class="form-check-input" />
+                <label for="isUsed" class="form-check-label">중고</label>
+            </div>
+        </div>
+
+        <div>색상</div>
+        <div th:each="color : ${colors}" class="form-check form-check-inline">
+            <input type="checkbox" th:field="${product.colors}" th:value="${color.key}" class="form-check-input" disabled>
+            <label th:for="${#ids.prev('colors')}" th:text="${color.value}" class="form-check-label"></label>
+        </div>
+
+        <div>상품 종류</div>
+        <div th:each="type : ${productTypes}" class="form-check form-check-inline">
+            <input type="radio" th:field="*{productType}" th:value="${type.name()}" class="form-check-input">
+            <label th:for="${#ids.prev('productType')}" th:text="${type.category}" class="form-check-label"></label>
+        </div>
+
+        <div>배송 방식</div>
+        <select th:field="*{delivery}" class="form-select">
+            <option value="">배송 방식</option>
+            <option th:each="delivery : ${deliveries}" th:value="${delivery.code}" th:text="${delivery.name}"></option>
+        </select>
+
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-dark" type="submit">상품 등록</button>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-secondary"
+                        onclick="location.href='productList.html'"
+                        th:onclick="|location.href='@{/products}'|"
+                        type="button">취소
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<!-- Section END -->
+</body>
+</html>
