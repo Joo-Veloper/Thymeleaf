@@ -428,19 +428,19 @@ ex) `${변수값}`
             @GetMapping("/variable")
                 public String variable(Model model) {
             
-                    User wonuk = new User("wonuk", 100);
-                    User wongyu = new User("wongyu", 101);
+                    User joo = new User("joo", 100);
+                    User java = new User("java", 101);
             
                     List<User> userList = new ArrayList<>();
-                    userList.add(wonuk);
-                    userList.add(wongyu);
+                    userList.add(joo);
+                    userList.add(java);
             
                     Map<String, User> userMap = new HashMap<>();
-                    userMap.put("wonuk", wonuk);
-                    userMap.put("wongyu", wongyu);
+                    userMap.put("joo", joo);
+                    userMap.put("java", java);
             
-                    model.addAttribute("wonuk", wonuk);
-                    model.addAttribute("wongyu", wongyu);
+                    model.addAttribute("joo", joo);
+                    model.addAttribute("java", java);
             
                     model.addAttribute("userList", userList);
                     model.addAttribute("userMap", userMap);
@@ -492,13 +492,13 @@ ex) `${변수값}`
             
             <h2>SpringEL 기본</h2>
             <ul>
-                <li>${wonuk.name} = <span th:text="${wonuk.name}"></span></li>
-                <li>${wonuk['name']} = <span th:text="${wonuk['name']}"></span></li>
-                <li>${wonuk.getName()} = <span th:text="${wonuk.getName()}"></span></li>
+                <li>${joo.name} = <span th:text="${joo.name}"></span></li>
+                <li>${joo['name']} = <span th:text="${joo['name']}"></span></li>
+                <li>${joo.getName()} = <span th:text="${joo.getName()}"></span></li>
             
-                <li>${wongyu.name} = <span th:text="${wongyu.name}"></span></li>
-                <li>${wongyu['name']} = <span th:text="${wongyu['name']}"></span></li>
-                <li>${wongyu.getName()} = <span th:text="${wongyu.getName()}"></span></li>
+                <li>${java.name} = <span th:text="${java.name}"></span></li>
+                <li>${java['name']} = <span th:text="${java['name']}"></span></li>
+                <li>${java.getName()} = <span th:text="${java.getName()}"></span></li>
             </ul>
             
             <h2>userList</h2>
@@ -514,13 +514,13 @@ ex) `${변수값}`
             
             <h2>userMap</h2>
             <ul>
-                <li>${userMap['wonuk'].name} = <span th:text="${userMap['wonuk'].name}"></span></li>
-                <li>${userMap['wonuk']['name']} = <span th:text="${userMap['wonuk']['name']}"></span></li>
-                <li>${userMap['wonuk'].getName()} = <span th:text="${userMap['wonuk'].getName()}"></span></li>
+                <li>${userMap['joo'].name} = <span th:text="${userMap['joo'].name}"></span></li>
+                <li>${userMap['joo']['name']} = <span th:text="${userMap['joo']['name']}"></span></li>
+                <li>${userMap['joo'].getName()} = <span th:text="${userMap['joo'].getName()}"></span></li>
             
-                <li>${userMap['wongyu'].name} = <span th:text="${userMap['wongyu'].name}"></span></li>
-                <li>${userMap['wongyu']['name']} = <span th:text="${userMap['wongyu']['name']}"></span></li>
-                <li>${userMap['wongyu'].getName()} = <span th:text="${userMap['wongyu'].getName()}"></span></li>
+                <li>${userMap['java'].name} = <span th:text="${userMap['java'].name}"></span></li>
+                <li>${userMap['java']['name']} = <span th:text="${userMap['java']['name']}"></span></li>
+                <li>${userMap['java'].getName()} = <span th:text="${userMap['java'].getName()}"></span></li>
             </ul>
             </body>
             </html>
